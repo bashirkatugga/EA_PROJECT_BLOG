@@ -1,0 +1,37 @@
+server:
+  port: 9020
+
+spring:
+  application:
+    name: API-GATEWAY
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: USER-SERVICE
+#          uri: lb://USER-SERVICE
+#          predicates:
+#            - Path=/users/**, /authenticate
+#          filters:
+#            - name: AuthenticationFilter
+#        - id: POST-SERVICE
+#          uri: lb://POST-SERVICE
+#          predicates:
+#            - Path=/posts/**
+#          filters:
+#            - name: AuthenticationFilter
+#        - id: COMMENT-SERVICE
+#          uri: lb://COMMENT-SERVICE
+#          predicates:
+#            - Path=/comments/**
+#          filters:
+#            - name: AuthenticationFilter
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
+
